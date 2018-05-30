@@ -41,5 +41,5 @@ class Ui_NewPureSignalDialogLogic(Ui_PureSginalDialog):
         self.ui = GraphicWidgetLogic(self)
         self.ui.setupUi(self.PlotWindow)
         self.ui.initializeBinds()
-        self.ui.PlotSin(self.doubleSpinBoxAmplitude.value(),self.doubleSpinBoxFrequency.value(),self.doubleSpinBoxPhase.value())
+        self.ui.PlotSin(self.doubleSpinBoxAmplitude.value(),self.doubleSpinBoxFrequency.value(),self.doubleSpinBoxPhase.value(),"PURE")
         return self.PlotWindow

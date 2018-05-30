@@ -7,5 +7,4 @@ setup(name='Signal Visualizer',
       author='Mikel Diez Garcia (arraiz)',
       author_email='mdiez030@ehu.eus',
       license='MIT',
-      packages=['funniest'],
       zip_safe=False)
