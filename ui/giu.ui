@@ -13,7 +13,29 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>40</y>
+      <width>231</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>SINGAL BETA-LIZER</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -34,8 +56,40 @@
     <property name="title">
      <string>Generate</string>
     </property>
-    <addaction name="actionPure_Signal"/>
+    <widget class="QMenu" name="menuPeriodic_Known_Signal">
+     <property name="title">
+      <string>Periodic Known Signal</string>
+     </property>
+     <addaction name="actionSawtooth"/>
+     <addaction name="actionGaussian_Pulse"/>
+     <addaction name="actionSquare"/>
+    </widget>
+    <widget class="QMenu" name="menuHarmonic_Synteshis">
+     <property name="title">
+      <string>Harmonic Synteshis</string>
+     </property>
+     <addaction name="actionFree"/>
+    </widget>
+    <widget class="QMenu" name="menuPure_Tone">
+     <property name="title">
+      <string>Pure Tone</string>
+     </property>
+     <addaction name="actionNew"/>
+    </widget>
+    <widget class="QMenu" name="menuNoise">
+     <property name="title">
+      <string>Noise</string>
+     </property>
+     <addaction name="actionWhite"/>
+     <addaction name="actionPink"/>
+    </widget>
+    <addaction name="menuPure_Tone"/>
+    <addaction name="menuPeriodic_Known_Signal"/>
+    <addaction name="menuHarmonic_Synteshis"/>
+    <addaction name="menuNoise"/>
     <addaction name="separator"/>
+    <addaction name="actionRecord_Signal"/>
+    <addaction name="actionLoad_Signal"/>
    </widget>
    <addaction name="menuSignal_Visualizer"/>
    <addaction name="menuGenerate"/>
@@ -56,9 +110,59 @@
     <string>Exit</string>
    </property>
   </action>
-  <action name="actionPure_Signal">
+  <action name="actionLoad_Signal">
    <property name="text">
-    <string>Pure Signal</string>
+    <string>Load Signal</string>
+   </property>
+  </action>
+  <action name="actionRecord_Signal">
+   <property name="text">
+    <string>Record Signal</string>
+   </property>
+  </action>
+  <action name="actionSin">
+   <property name="text">
+    <string>Sin</string>
+   </property>
+  </action>
+  <action name="actionCos">
+   <property name="text">
+    <string>Cos</string>
+   </property>
+  </action>
+  <action name="actionSawtooth">
+   <property name="text">
+    <string>Sawtooth</string>
+   </property>
+  </action>
+  <action name="actionGaussian_Pulse">
+   <property name="text">
+    <string>Rosenbert</string>
+   </property>
+  </action>
+  <action name="actionSquare">
+   <property name="text">
+    <string>Square</string>
+   </property>
+  </action>
+  <action name="actionFree">
+   <property name="text">
+    <string>Free</string>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="actionWhite">
+   <property name="text">
+    <string>White</string>
+   </property>
+  </action>
+  <action name="actionPink">
+   <property name="text">
+    <string>Pink</string>
    </property>
   </action>
  </widget>

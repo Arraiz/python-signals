@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'PlotWindow.ui'
+# Form implementation generated from reading ui file './ui/PlotWindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.10.1
 #
@@ -24,9 +24,12 @@ class Ui_PlotWindow(object):
         self.pushButtonAddSignal = QtWidgets.QPushButton(PlotWindow)
         self.pushButtonAddSignal.setObjectName("pushButtonAddSignal")
         self.horizontalLayout.addWidget(self.pushButtonAddSignal)
-        self.pushButtonPlotNewSignal = QtWidgets.QPushButton(PlotWindow)
-        self.pushButtonPlotNewSignal.setObjectName("pushButtonPlotNewSignal")
-        self.horizontalLayout.addWidget(self.pushButtonPlotNewSignal)
+        self.pushButtonViewFFT = QtWidgets.QPushButton(PlotWindow)
+        self.pushButtonViewFFT.setObjectName("pushButtonViewFFT")
+        self.horizontalLayout.addWidget(self.pushButtonViewFFT)
+        self.pushButtonExportCSV = QtWidgets.QPushButton(PlotWindow)
+        self.pushButtonExportCSV.setObjectName("pushButtonExportCSV")
+        self.horizontalLayout.addWidget(self.pushButtonExportCSV)
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
         self.verticalLayout.addLayout(self.horizontalLayout)
@@ -37,18 +40,9 @@ class Ui_PlotWindow(object):
 
     def retranslateUi(self, PlotWindow):
         _translate = QtCore.QCoreApplication.translate
-        PlotWindow.setWindowTitle(_translate("PlotWindow", "Form"))
+        PlotWindow.setWindowTitle(_translate("PlotWindow", "PlotWindow"))
         self.pushButtonAddSignal.setText(_translate("PlotWindow", "Add Signal"))
-        self.pushButtonPlotNewSignal.setText(_translate("PlotWindow", "Plot Signal"))
+        self.pushButtonViewFFT.setText(_translate("PlotWindow", "View FFT"))
+        self.pushButtonExportCSV.setText(_translate("PlotWindow", "Export CSV"))
 
 from pyqtgraph import PlotWidget
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    PlotWindow = QtWidgets.QWidget()
-    ui = Ui_PlotWindow()
-    ui.setupUi(PlotWindow)
-    PlotWindow.show()
-    sys.exit(app.exec_())
-

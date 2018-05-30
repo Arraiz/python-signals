@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="images">
+    <file>sawtooth.png</file>
+    <file>squareploted.png</file>
+    <file>sinploted.png</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,96 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'ui/Rossenbert.ui'
+#
+# Created by: PyQt5 UI code generator 5.10.1
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_RosenbertDialog(object):
+    def setupUi(self, RosenbertDialog):
+        RosenbertDialog.setObjectName("RosenbertDialog")
+        RosenbertDialog.resize(402, 488)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(RosenbertDialog.sizePolicy().hasHeightForWidth())
+        RosenbertDialog.setSizePolicy(sizePolicy)
+        RosenbertDialog.setMinimumSize(QtCore.QSize(402, 488))
+        RosenbertDialog.setMaximumSize(QtCore.QSize(402, 488))
+        RosenbertDialog.setSizeGripEnabled(False)
+        self.buttonBox = QtWidgets.QDialogButtonBox(RosenbertDialog)
+        self.buttonBox.setGeometry(QtCore.QRect(180, 450, 221, 41))
+        self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
+        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
+        self.buttonBox.setObjectName("buttonBox")
+        self.line = QtWidgets.QFrame(RosenbertDialog)
+        self.line.setGeometry(QtCore.QRect(10, 270, 401, 20))
+        self.line.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line.setObjectName("line")
+        self.layoutWidget = QtWidgets.QWidget(RosenbertDialog)
+        self.layoutWidget.setGeometry(QtCore.QRect(10, 290, 381, 121))
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.layoutWidget)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.labelFrequency = QtWidgets.QLabel(self.layoutWidget)
+        self.labelFrequency.setObjectName("labelFrequency")
+        self.horizontalLayout_2.addWidget(self.labelFrequency)
+        self.doubleSpinBoxFrequency = QtWidgets.QDoubleSpinBox(self.layoutWidget)
+        self.doubleSpinBoxFrequency.setMaximum(20000.0)
+        self.doubleSpinBoxFrequency.setProperty("value", 100.0)
+        self.doubleSpinBoxFrequency.setObjectName("doubleSpinBoxFrequency")
+        self.horizontalLayout_2.addWidget(self.doubleSpinBoxFrequency)
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.labelAlpha1 = QtWidgets.QLabel(self.layoutWidget)
+        self.labelAlpha1.setObjectName("labelAlpha1")
+        self.horizontalLayout_5.addWidget(self.labelAlpha1)
+        self.doubleSpinBoxAlpha1 = QtWidgets.QDoubleSpinBox(self.layoutWidget)
+        self.doubleSpinBoxAlpha1.setMaximum(100.0)
+        self.doubleSpinBoxAlpha1.setProperty("value", 25.0)
+        self.doubleSpinBoxAlpha1.setObjectName("doubleSpinBoxAlpha1")
+        self.horizontalLayout_5.addWidget(self.doubleSpinBoxAlpha1)
+        self.verticalLayout.addLayout(self.horizontalLayout_5)
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.labelAlpha2 = QtWidgets.QLabel(self.layoutWidget)
+        self.labelAlpha2.setObjectName("labelAlpha2")
+        self.horizontalLayout_3.addWidget(self.labelAlpha2)
+        self.doubleSpinBoxAlpha2 = QtWidgets.QDoubleSpinBox(self.layoutWidget)
+        self.doubleSpinBoxAlpha2.setMaximum(100.0)
+        self.doubleSpinBoxAlpha2.setProperty("value", 30.0)
+        self.doubleSpinBoxAlpha2.setObjectName("doubleSpinBoxAlpha2")
+        self.horizontalLayout_3.addWidget(self.doubleSpinBoxAlpha2)
+        self.verticalLayout.addLayout(self.horizontalLayout_3)
+        self.PreviewPlot = PlotWidget(RosenbertDialog)
+        self.PreviewPlot.setGeometry(QtCore.QRect(0, 0, 401, 261))
+        self.PreviewPlot.setObjectName("PreviewPlot")
+        self.labelFormula = QtWidgets.QLabel(RosenbertDialog)
+        self.labelFormula.setGeometry(QtCore.QRect(0, 420, 401, 31))
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.labelFormula.setFont(font)
+        self.labelFormula.setText("")
+        self.labelFormula.setAlignment(QtCore.Qt.AlignCenter)
+        self.labelFormula.setObjectName("labelFormula")
+
+        self.retranslateUi(RosenbertDialog)
+        self.buttonBox.accepted.connect(RosenbertDialog.accept)
+        self.buttonBox.rejected.connect(RosenbertDialog.reject)
+        QtCore.QMetaObject.connectSlotsByName(RosenbertDialog)
+
+    def retranslateUi(self, RosenbertDialog):
+        _translate = QtCore.QCoreApplication.translate
+        RosenbertDialog.setWindowTitle(_translate("RosenbertDialog", "Rosenbert"))
+        self.labelFrequency.setText(_translate("RosenbertDialog", "Frequency (Fo)"))
+        self.labelAlpha1.setText(_translate("RosenbertDialog", "Alpha 2"))
+        self.labelAlpha2.setText(_translate("RosenbertDialog", "Alpha 1"))
+
+from pyqtgraph import PlotWidget

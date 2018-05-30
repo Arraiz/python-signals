@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>PlotWindow</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -29,9 +29,16 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButtonPlotNewSignal">
+        <widget class="QPushButton" name="pushButtonViewFFT">
          <property name="text">
-          <string>Plot Signal</string>
+          <string>View FFT</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonExportCSV">
+         <property name="text">
+          <string>Export CSV</string>
          </property>
         </widget>
        </item>
