@@ -2,7 +2,6 @@ import sys
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from .PlotWindow import Ui_PlotWindow
-from dialogs.AddNewSignalDialog import Ui_AddSignalDialog
 from .FFTWindowLogic import FFTWindowLogic
 from numpy import sin, cos, fft, arange, pi, savetxt
 from scipy import signal
@@ -45,7 +44,7 @@ class PlotWindowLogic(Ui_PlotWindow):
         proxy = SignalProxy(self.plot.scene().sigMouseMoved, rateLimit=60, slot=self.MouseMoved)
 
     def MouseMoved(self):
-        print("h3h3h3")
+        pass
 
 
     def plotSawtooth(self, amp, freq):
@@ -90,15 +89,15 @@ class PlotWindowLogic(Ui_PlotWindow):
         self.plot.plot(self.x, self.y, pen=mkPen('b', width=1),
                     name=str(amp)+"Gaussian Pulse(2π"+str(freq))
 
-    def addSignal(self):
-        # abre un nuevo dialogo
-        self.AddSignalWindow = QtWidgets.QDialog()
-        self.ui = Ui_AddSignalDialog()
-        self.ui.setupUi(self.AddSignalWindow)
-        self.AddSignalWindow.show()
-        self.AddSignalWindow.activateWindow()
-        self.AddSignalWindow.raise_
-        self.AddSignalWindow.accepted.connect(self.Addplot)
+    # def addSignal(self):
+    #     # abre un nuevo dialogo
+    #     self.AddSignalWindow = QtWidgets.QDialog()
+    #     self.ui = Ui_AddSignalDialog()
+    #     self.ui.setupUi(self.AddSignalWindow)
+    #     self.AddSignalWindow.show()
+    #     self.AddSignalWindow.activateWindow()
+    #     self.AddSignalWindow.raise_
+    #     self.AddSignalWindow.accepted.connect(self.Addplot)
 
     def Addplot(self):
         amp = self.ui.horizontalSliderAmplitude.value()

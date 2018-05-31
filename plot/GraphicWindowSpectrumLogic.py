@@ -52,7 +52,6 @@ class GraphicWidgetLogicSpectrumLogic (Ui_GraphicWindowSpectrum):
 
         self.zoomedPlot.scene().sigMouseMoved.connect(self.mouseMoved)
         self.region.sigRegionChanged.connect(self.update)
-
         self.zoomedPlot.sigRangeChanged.connect(self.updateRegion)
 
     def updateRegion(self, window, viewRange):

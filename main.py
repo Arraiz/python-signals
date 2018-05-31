@@ -3,8 +3,7 @@ import numpy as np
 from PyQt5 import QtCore, QtGui, QtWidgets
 # importamos la interfaz grafica
 from gui import Ui_MainWindow
-from dialogs.pureSignal.NewSinDialogLogic import Ui_NewSinDialogLogic
-from dialogs.pureSignal.NewCosDialogLogic import Ui_NewCosDialogLogic
+
 from dialogs.PeriodicKnownSignals.NewSquareDialogLogic import Ui_NewSuareDialogLogic
 from dialogs.PeriodicKnownSignals.NewSawtoothDialogLogic import Ui_NewSawtoothDialogLogic
 from dialogs.HarmonicSynthesis.HarmonicSynthesisWidgetLogic import FreeHarmonicSynthesisWidgetLogic
@@ -149,6 +148,7 @@ class UI_Logic(Ui_MainWindow):
         self.actionFree.triggered.connect(self.openHarmonicSynthesis)
         self.actionRosenbert.triggered.connect(self.openRosenbert)
         self.actionLoad.triggered.connect(self.openLoadFile)
+        
 
 
 if __name__ == '__main__':
