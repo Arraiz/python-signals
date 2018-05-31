@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QGraphicsView" name="graphicsView"/>
+      <widget class="PlotWidget" name="graphicsView"/>
      </item>
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -44,7 +44,11 @@
           </widget>
          </item>
          <item>
-          <widget class="QDoubleSpinBox" name="doubleSpinBoxDuration"/>
+          <widget class="QDoubleSpinBox" name="doubleSpinBoxDuration">
+           <property name="value">
+            <double>2.000000000000000</double>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QLabel" name="label_3">
@@ -54,7 +58,17 @@
           </widget>
          </item>
          <item>
-          <widget class="QDoubleSpinBox" name="doubleSpinBoxFrequency"/>
+          <widget class="QDoubleSpinBox" name="doubleSpinBoxFrequency">
+           <property name="decimals">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <double>50000.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>48000.000000000000000</double>
+           </property>
+          </widget>
          </item>
          <item>
           <spacer name="horizontalSpacer_6">
@@ -95,6 +109,13 @@
         <widget class="QPushButton" name="pushButtonRecord">
          <property name="text">
           <string>Record</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonPlay">
+         <property name="text">
+          <string>Play</string>
          </property>
         </widget>
        </item>
@@ -171,6 +192,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QGraphicsView</extends>
+   <header>pyqtgraph</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>

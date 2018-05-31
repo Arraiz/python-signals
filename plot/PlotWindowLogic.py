@@ -16,7 +16,7 @@ class PlotWindowLogic(Ui_PlotWindow):
         Ui_PlotWindow.__init__(self)
 
     def initBindings(self):
-        self.pushButtonAddSignal.clicked.connect(self.addSignal)
+        # self.pushButtonAddSignal.clicked.connect(self.addSignal)
         self.pushButtonViewFFT.clicked.connect(self.showFFT)
         self.pushButtonExportCSV.clicked.connect(self.exportDataset)
         self.FFTwindow = None
@@ -62,7 +62,7 @@ class PlotWindowLogic(Ui_PlotWindow):
                        name=str(amp)+"Sawtooth(2π"+str(freq))
 
     def plotSquare(self, amp, freq):
-        self.Fs: int = 44100
+        self.Fs: int = 48000
         self.x = arange(0, 1, 1/self.Fs)
         self.y = (amp/10)*square(2*pi*freq*self.x)
         self.plot = self.PlotView.plotItem
@@ -99,19 +99,19 @@ class PlotWindowLogic(Ui_PlotWindow):
     #     self.AddSignalWindow.raise_
     #     self.AddSignalWindow.accepted.connect(self.Addplot)
 
-    def Addplot(self):
-        amp = self.ui.horizontalSliderAmplitude.value()
-        freq = self.ui.horizontalSliderFrequency.value()
-        phase = self.ui.horizontalSliderPhase.value()
-        func = 'Sin'
-        self.y = self.y+(amp/10)*sin(2*pi*freq*self.x+phase*pi)
-        if(self.ui.radioButtonCos.isChecked() == True):
-            self.y = self.y+(amp/10)*cos(2*pi*freq*self.x+phase*pi)
-            func = 'Cos'
+    # def Addplot(self):
+    #     amp = self.ui.horizontalSliderAmplitude.value()
+    #     freq = self.ui.horizontalSliderFrequency.value()
+    #     phase = self.ui.horizontalSliderPhase.value()
+    #     func = 'Sin'
+    #     self.y = self.y+(amp/10)*sin(2*pi*freq*self.x+phase*pi)
+    #     if(self.ui.radioButtonCos.isChecked() == True):
+    #         self.y = self.y+(amp/10)*cos(2*pi*freq*self.x+phase*pi)
+    #         func = 'Cos'
 
-        self.plot.clearPlots()
-        self.plot.plot(self.x, self.y, pen='r', name=str(
-            amp/10)+' ('+func+' 2π '+str(freq)+'*t)')
+    #     self.plot.clearPlots()
+    #     self.plot.plot(self.x, self.y, pen='r', name=str(
+    #         amp/10)+' ('+func+' 2π '+str(freq)+'*t)')
 
     def showFFT(self):
         self.FFTwindow = QtWidgets.QWidget()

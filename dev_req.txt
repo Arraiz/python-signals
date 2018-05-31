@@ -1,5 +1,6 @@
 cffi==1.11.5
 numpy==1.14.3
+PyAudio==0.2.11
 pycparser==2.18
 PyQt5==5.10.1
 pyqtgraph==0.10.0

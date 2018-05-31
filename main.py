@@ -11,8 +11,7 @@ from dialogs.pureSignal.NewPureSignalLogic import Ui_NewPureSignalDialogLogic
 from dialogs.Rosenbert.RosenbertLogic import RosenbertDialogLogic
 
 from dialogs.InputOutput.LoadFileDialogLogic import LoadFileDialogLogic
-
-
+from dialogs.InputOutput.RecordSoundDialogLogic import RecordSoundDialogLogic
 # ----------------------------
 # # PUNTO DE ENTRADA DE LA APP
 # ----------------------------
@@ -139,8 +138,18 @@ class UI_Logic(Ui_MainWindow):
         self.window.activateWindow()
         self.window.raise_()
 
+    def openRedordSound(self):
+        self.window = QtWidgets.QDialog()
+        self.ui = RecordSoundDialogLogic(self)
+        self.ui.setupUi(self.window)
+        self.ui.setupBinds()
+        self.window.show()
+        self.window.activateWindow()
+        self.window.raise_()
     ##################################
 
+
+    ###########CONTEXT MENU
     def setupMenu(self):
         self.actionNew.triggered.connect(self.openPureSignalDialog)
         self.actionSquare.triggered.connect(self.openNewSquarePlotDialog)
@@ -148,7 +157,7 @@ class UI_Logic(Ui_MainWindow):
         self.actionFree.triggered.connect(self.openHarmonicSynthesis)
         self.actionRosenbert.triggered.connect(self.openRosenbert)
         self.actionLoad.triggered.connect(self.openLoadFile)
-        
+        self.actionRecord.triggered.connect(self.openRedordSound)
 
 
 if __name__ == '__main__':
