@@ -3,17 +3,26 @@ from PyQt5 import QtWidgets
 from scipy.io import wavfile
 from pyqtgraph import mkPen
 from numpy import arange, sin, pi, linspace
+import sounddevice as sd
 
 
 class LoadFileDialogLogic(Ui_LoadFile):
 
     def __init__(self, LoadFileDialogLogic):
         Ui_LoadFile.__init__(self)
+        self.x = []
+        self.y = []
+        self.fs = 0
+        self.data = []
 
     def setupBinds(self):
-        self.pushButton.clicked.connect(self.openFileDialog)
-        self.lineEdit.setText("Enter File Direction")
-        self.plot.plotItem.vb.setBackgroundColor("w")
+        self.pushButtonLoad.clicked.connect(self.openFileDialog)
+        self.lineEdit.returnPressed.connect(self.openFileDialog)
+        self.pushButtonPlay.clicked.connect(self.play)
+        self.plot.setBackground(background="w")
+
+    def play(self):
+        sd.play(self.data, self.fs)
 
     def openFileDialog(self):
         self._audio_file = None
@@ -28,8 +37,10 @@ class LoadFileDialogLogic(Ui_LoadFile):
             self.lineEdit.setText(str(self._audio_file))
             # open file
             fs, data = wavfile.read(str(self._audio_file))
-            self.x = linspace(0, len(data), fs)
-            print(len(data))
-            print(str(fs))
-            print(len(self.x))
-            # self.plot.plot(self.x, data, pen=mkPen('b', width=1))
+
+            self.fs = fs
+            self.data = data
+
+            self.x = arange(0, len(data)/fs, 1/fs)
+            self.plot.plotItem.clear()
+            self.plot.plot(self.x, data, pen=mkPen('b', width=1))

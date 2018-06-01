@@ -89,12 +89,10 @@
     <addaction name="menuHarmonic_Synteshis"/>
     <addaction name="menuNoise"/>
     <addaction name="separator"/>
-    <addaction name="actionRecord_Signal"/>
-    <addaction name="actionLoad_Signal"/>
    </widget>
    <widget class="QMenu" name="menuOther">
     <property name="title">
-     <string>Other</string>
+     <string>Input/Output</string>
     </property>
     <addaction name="actionLoad"/>
     <addaction name="actionRecord"/>
