@@ -13,6 +13,7 @@ class FFTWindowLogic(Ui_PlotWindowFFT):
         Ui_PlotWindowFFT.__init__(self)
         self.y = yArray
         self.Fs = Fs
+       
         self.pen=mkPen('r',width=2)
     
     def PlotFFT(self):
