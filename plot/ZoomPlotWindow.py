@@ -3,7 +3,7 @@ import scipy.ndimage as ndi
 import pyqtgraph as pg
 from pyqtgraph.Qt import QtGui, QtCore
 from pyqtgraph.Point import Point
-from 
+
   
 
 win = pg.GraphicsWindow()

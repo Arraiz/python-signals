@@ -70,10 +70,10 @@ class RecordSoundDialogLogic(Ui_RecordSoundDialog):
         sd.play(self.y, self.RATE, blocking=True)
 
     def saveFile(self):
-
-        fileName, _ = QtWidgets.QFileDialog.getSaveFileUrl(self)
-
-        print(fileName)
+        qfd = QtWidgets.QFileDialog()
+        fileName = QtWidgets.QFileDialog.getSaveFileName(qfd,"Save File")
+    
+        print("ruta"+str(fileName))
 
         # wf = wave.open(self.WAVE_OUTPUT_FILENAME, 'wb')
         # wf.setnchannels(self.CHANNELS)
