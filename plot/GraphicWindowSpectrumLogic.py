@@ -28,8 +28,8 @@ class GraphicWidgetLogicSpectrumLogic (Ui_GraphicWindowSpectrum):
         self.zoomedPlot = self.graphicsView.addPlot(row=1, col=0)
         self.fullPlot = self.graphicsView.addPlot(row=2, col=0)
 
-        self.zoomedPlot.vb.setBackgroundColor("w")
-        self.fullPlot.vb.setBackgroundColor("w")
+
+        self.graphicsView.setBackground(background="w")
         self.penB = mkPen('b')
         self.penR = mkPen('r')
         self.region = LinearRegionItem()

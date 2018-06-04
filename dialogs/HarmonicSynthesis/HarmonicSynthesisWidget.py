@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_FreeHarmSynthWidget(object):
     def setupUi(self, FreeHarmSynthWidget):
         FreeHarmSynthWidget.setObjectName("FreeHarmSynthWidget")
-        FreeHarmSynthWidget.resize(969, 637)
+        FreeHarmSynthWidget.resize(953, 619)
         self.layoutWidget = QtWidgets.QWidget(FreeHarmSynthWidget)
         self.layoutWidget.setGeometry(QtCore.QRect(-5, 1, 971, 611))
         self.layoutWidget.setObjectName("layoutWidget")
@@ -22,11 +22,13 @@ class Ui_FreeHarmSynthWidget(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem)
         self.pushButtonPlot = QtWidgets.QPushButton(self.layoutWidget)
         self.pushButtonPlot.setObjectName("pushButtonPlot")
         self.horizontalLayout_2.addWidget(self.pushButtonPlot)
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_2.addItem(spacerItem)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem1)
         self.verticalLayout_3.addLayout(self.horizontalLayout_2)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
         self.verticalLayout_2.setSpacing(0)
@@ -197,6 +199,6 @@ class Ui_FreeHarmSynthWidget(object):
     def retranslateUi(self, FreeHarmSynthWidget):
         _translate = QtCore.QCoreApplication.translate
         FreeHarmSynthWidget.setWindowTitle(_translate("FreeHarmSynthWidget", "Harmonic Synthesis"))
-        self.pushButtonPlot.setText(_translate("FreeHarmSynthWidget", "Plot"))
+        self.pushButtonPlot.setText(_translate("FreeHarmSynthWidget", "View Plot"))
 
 from pyqtgraph import PlotWidget

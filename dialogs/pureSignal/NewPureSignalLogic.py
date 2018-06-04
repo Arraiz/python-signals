@@ -17,8 +17,9 @@ class Ui_NewPureSignalDialogLogic(Ui_PureSginalDialog):
         self.doubleSpinBoxAmplitude.valueChanged.connect(self.update)
         self.doubleSpinBoxFrequency.valueChanged.connect(self.update)
         self.doubleSpinBoxPhase.valueChanged.connect(self.update)
+        self.PreviewPlot.setBackground(background="w")
         self.plot = self.PreviewPlot.plotItem
-        self.plot.vb.setBackgroundColor("w")
+        
 
     
     def update(self):

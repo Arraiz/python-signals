@@ -89,3 +89,6 @@ class RecordSoundDialogLogic(Ui_RecordSoundDialog):
         wf.writeframes(self.frames)
         wf.close()
         self.LabelStatus.setText("Saved OK.")
+    
+
+    

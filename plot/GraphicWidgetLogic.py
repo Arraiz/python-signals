@@ -144,35 +144,4 @@ class GraphicWidgetLogic (Ui_GraphicWindow):
         self.fullPlot.plot(x_array, y_array, pen=self.penR)
         self.zoomedPlot.plot(x_array, y_array, pen=self.penB)
 
-    # def addSignal(self):
-    #     # abre un nuevo dialogo
-    #     self.AddSignalWindow = QtWidgets.QDialog()
-    #     self.ui = Ui_AddSignalDialog()
-    #     self.ui.setupUi(self.AddSignalWindow)
-    #     self.AddSignalWindow.show()
-    #     self.AddSignalWindow.activateWindow()
-    #     self.AddSignalWindow.raise_
-    #     self.AddSignalWindow.accepted.connect(self.Addplot)
-
-    # def Addplot(self):
-    #     amp = self.ui.horizontalSliderAmplitude.value()
-    #     freq = self.ui.horizontalSliderFrequency.value()
-    #     phase = self.ui.horizontalSliderPhase.value()
-    #     func = 'Sin'
-    #     self.y = self.y+(amp/10)*sin(2*pi*freq*self.x+phase*pi)
-    #     if(self.ui.radioButtonCos.isChecked() == True):
-    #         self.y = self.y+(amp/10)*cos(2*pi*freq*self.x+phase*pi)
-    #         func = 'Cos'
-
-    #     self.plot.clearPlots()
-    #     self.plot.plot(self.x, self.y, pen='r', name=str(
-    #         amp/10)+' ('+func+' 2π '+str(freq)+'*t)')
-
-    # def showFFT(self):
-    #     self.FFTwindow = QtWidgets.QWidget()
-    #     self.ui = FFTWindowLogic(self, self.y, self.Fs)
-    #     self.ui.setupUi(self.FFTwindow)
-    #     self.ui.PlotFFT()
-    #     self.FFTwindow.activateWindow()
-    #     self.FFTwindow.show()
-    #     self.FFTwindow.raise_()
+   

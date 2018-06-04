@@ -18,11 +18,9 @@ class FreeHarmonicSynthesisWidgetLogic(Ui_FreeHarmSynthWidget):
 
     def Logic(self):
         self.bind()
+        self.PlotPreview.setBackground(background="w")
         self.plot = self.PlotPreview.plotItem
-        self.plot.vb.setBackgroundColor("w")
         self.x = arange(0,1,1/self.FS)
-
-
 
         
     # bidnea los scrolls a las amplitudes y y frecuancias de los senos

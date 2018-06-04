@@ -3,6 +3,7 @@ from PyQt5 import QtWidgets
 from scipy.io import wavfile
 from pyqtgraph import mkPen
 from numpy import arange, sin, pi, linspace
+
 import sounddevice as sd
 
 
@@ -44,3 +45,12 @@ class LoadFileDialogLogic(Ui_LoadFile):
             self.x = arange(0, len(data)/fs, 1/fs)
             self.plot.plotItem.clear()
             self.plot.plot(self.x, data, pen=mkPen('b', width=1))
+
+
+        # def generatePlot(self):
+        #     self.PlotWindow = QtWidgets.QWidget()
+        #     self.ui = GraphicWidgetLogic(self)
+        #     self.ui.setupUi(self.PlotWindow)
+        #     self.ui.initializeBinds()
+        #     self.ui.PlotSin(self.doubleSpinBoxAmplitude.value(),self.doubleSpinBoxFrequency.value(),self.doubleSpinBoxPhase.value(),"PURE")
+        #     return self.PlotWindow
