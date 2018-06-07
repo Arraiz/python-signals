@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>409</width>
-    <height>192</height>
+    <width>433</width>
+    <height>207</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,7 +29,7 @@
      </font>
     </property>
     <property name="text">
-     <string>SINGAL BETA-LIZER</string>
+     <string>Signal BETA-LIZER</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -41,7 +41,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>409</width>
+     <width>433</width>
      <height>22</height>
     </rect>
    </property>
@@ -97,9 +97,16 @@
     <addaction name="actionLoad"/>
     <addaction name="actionRecord"/>
    </widget>
+   <widget class="QMenu" name="menuAnalisys">
+    <property name="title">
+     <string>Analyze</string>
+    </property>
+    <addaction name="actionSpectrogram"/>
+   </widget>
    <addaction name="menuSignal_Visualizer"/>
    <addaction name="menuGenerate"/>
    <addaction name="menuOther"/>
+   <addaction name="menuAnalisys"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionSine">
@@ -185,6 +192,11 @@
   <action name="actionRecord">
    <property name="text">
     <string>Record</string>
+   </property>
+  </action>
+  <action name="actionSpectrogram">
+   <property name="text">
+    <string>Spectrogram</string>
    </property>
   </action>
  </widget>

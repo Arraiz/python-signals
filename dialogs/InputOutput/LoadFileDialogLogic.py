@@ -3,7 +3,6 @@ from PyQt5 import QtWidgets
 from scipy.io import wavfile
 from pyqtgraph import mkPen
 from numpy import arange, sin, pi, linspace
-
 import sounddevice as sd
 
 
