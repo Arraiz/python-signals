@@ -160,6 +160,7 @@ class UI_Logic(Ui_MainWindow):
         self.actionRecord.triggered.connect(self.openRedordSound)
 
 
+
 if __name__ == '__main__':
     # entry point
     app = QtWidgets.QApplication(sys.argv)

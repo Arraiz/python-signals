@@ -23,7 +23,6 @@ class Ui_NewSawtoothDialogLogic(Ui_NewSawtoothDialog):
     
     def update(self):
         self.y=self.doubleSpinBoxAmplitude.value()*sawtooth(2*pi*self.doubleSpinBoxFrequency.value()*self.x)
-        self.labelFormula.setText("%.02fsaw(2π%.2f)"%(self.doubleSpinBoxAmplitude.value(),self.doubleSpinBoxFrequency.value()))
         self.plot.clear()
         self.plot.plot(self.x,self.y,pen=mkPen('b', width=1.5))
         

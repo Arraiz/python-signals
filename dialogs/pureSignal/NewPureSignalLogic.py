@@ -24,7 +24,7 @@ class Ui_NewPureSignalDialogLogic(Ui_PureSginalDialog):
     
     def update(self):
         self.y=self.doubleSpinBoxAmplitude.value()*sin(2*pi*self.doubleSpinBoxFrequency.value()*self.x+(self.doubleSpinBoxPhase.value()*2*pi))
-        self.labelFormula.setText("%.2fsin(2π%.2f+%.2f*π)"%(self.doubleSpinBoxAmplitude.value(),self.doubleSpinBoxFrequency.value(),self.doubleSpinBoxPhase.value()))
+        self.labelFormula.setText("%.2fsin(2π%.2ft+%.2fπ)"%(self.doubleSpinBoxAmplitude.value(),self.doubleSpinBoxFrequency.value(),self.doubleSpinBoxPhase.value()))
         self.plot.clear()
         self.plot.plot(self.x,self.y,pen=mkPen('b', width=1))
         

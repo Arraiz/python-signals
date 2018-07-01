@@ -94,12 +94,23 @@ class GraphicWidgetLogicSpectrumLogic (Ui_GraphicWindowSpectrum):
             self.zoomedPlot.plot(self.X, self.Y, pen=self.penB)
         elif (flag == 'PURE'):
 
-        
-            print("PURE")
-            self.Y = abs(fft.rfft(self.y,self.FS))
-            self.X = linspace(0, len(self.Y), len(self.Y))
-            print(len(self.X))
-            print(len(self.Y))
+
+            self.X = linspace(0, ((self.FS)/2), (self.FS)/2)
+            self.Y = abs(fft.rfft(self.y, self.FS-1))/len(self.X)/2
+            # self.Y = abs(fft.rfft(self.y, 512))/len(self.X)/2
+            
+
 
             self.fullPlot.plot(self.X, self.Y, pen=self.penR)
             self.zoomedPlot.plot(self.X, self.Y, pen=self.penB)
+
+       
+
+            # print("PURE")
+            # self.Y = abs(fft.rfft(self.y,self.FS))
+            # self.X = linspace(0, len(self.Y), len(self.Y))
+            # print(len(self.X))
+            # print(len(self.Y))
+
+            # self.fullPlot.plot(self.X, self.Y, pen=self.penR)
+            # self.zoomedPlot.plot(self.X, self.Y, pen=self.penB)

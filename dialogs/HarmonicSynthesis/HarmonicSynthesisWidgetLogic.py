@@ -1,7 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from plot.GraphicWidgetLogic import GraphicWidgetLogic
 from .HarmonicSynthesisWidget import Ui_FreeHarmSynthWidget
-from numpy import sin,pi,arange
+from numpy import sin,pi,arange,cos
 from pyqtgraph import mkPen
 
 class FreeHarmonicSynthesisWidgetLogic(Ui_FreeHarmSynthWidget):
@@ -62,7 +62,7 @@ class FreeHarmonicSynthesisWidgetLogic(Ui_FreeHarmSynthWidget):
 
     def update(self):
         self.plot.clear()
-        self.y=(self.freqBias*self.FreqVSlider.value()*sin(2*pi*self.x*self.FreqSpinBox.value()))+(self.freqBias*self.FreqVSlider_2.value()*sin(2*pi*self.x*self.FreqSpinBox_2.value()))+(self.freqBias*self.FreqVSlider_3.value()*sin(2*pi*self.x*self.FreqSpinBox_3.value()))+(self.freqBias*self.FreqVSlider_4.value()*sin(2*pi*self.x*self.FreqSpinBox_4.value()))+(self.freqBias*self.FreqVSlider_5.value()*sin(2*pi*self.x*self.FreqSpinBox_5.value()))+(self.freqBias*self.FreqVSlider_6.value()*sin(2*pi*self.x*self.FreqSpinBox_6.value()))+(self.freqBias*self.FreqVSlider_7.value()*sin(2*pi*self.x*self.FreqSpinBox_7.value()))+(self.freqBias*self.FreqVSlider_8.value()*sin(2*pi*self.x*self.FreqSpinBox_8.value()))+(self.freqBias*self.FreqVSlider_9.value()*sin(2*pi*self.x*self.FreqSpinBox_9.value()))+(self.freqBias*self.FreqVSlider_10.value()*sin(2*pi*self.x*self.FreqSpinBox_10.value()))
+        self.y=(self.freqBias*self.FreqVSlider.value()*cos(2*pi*self.x*self.FreqSpinBox.value()))+(self.freqBias*self.FreqVSlider_2.value()*sin(2*pi*self.x*self.FreqSpinBox_2.value()))+(self.freqBias*self.FreqVSlider_3.value()*sin(2*pi*self.x*self.FreqSpinBox_3.value()))+(self.freqBias*self.FreqVSlider_4.value()*sin(2*pi*self.x*self.FreqSpinBox_4.value()))+(self.freqBias*self.FreqVSlider_5.value()*sin(2*pi*self.x*self.FreqSpinBox_5.value()))+(self.freqBias*self.FreqVSlider_6.value()*sin(2*pi*self.x*self.FreqSpinBox_6.value()))+(self.freqBias*self.FreqVSlider_7.value()*sin(2*pi*self.x*self.FreqSpinBox_7.value()))+(self.freqBias*self.FreqVSlider_8.value()*sin(2*pi*self.x*self.FreqSpinBox_8.value()))+(self.freqBias*self.FreqVSlider_9.value()*sin(2*pi*self.x*self.FreqSpinBox_9.value()))+(self.freqBias*self.FreqVSlider_10.value()*sin(2*pi*self.x*self.FreqSpinBox_10.value()))
         self.plot.plot(self.x,self.y,pen=mkPen('r', width=1))
 
 
