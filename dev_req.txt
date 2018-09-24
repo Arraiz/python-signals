@@ -7,3 +7,7 @@ pyqtgraph==0.10.0
 scipy==1.1.0
 sip==4.19.8
 sounddevice==0.3.11
+
+
+para compilar el programa escribir en terminal
+pyinstaller --debug --windowed --onefile --hidden-import=scipy._lib.messagestream  main.py

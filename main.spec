@@ -4,10 +4,10 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['/Users/mikeldiez/Desktop/test2/pyqtgraph tests'],
+             pathex=['/Users/mikeldiez/Desktop/test2/SignalVisualizer_V0.1_26junio2018'],
              binaries=[],
              datas=[],
-             hiddenimports=[],
+             hiddenimports=['scipy._lib.messagestream'],
              hookspath=[],
              runtime_hooks=[],
              excludes=[],
@@ -18,16 +18,16 @@ pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 exe = EXE(pyz,
           a.scripts,
-          exclude_binaries=True,
+          a.binaries,
+          a.zipfiles,
+          a.datas,
           name='main',
-          debug=False,
+          debug=True,
           strip=False,
           upx=True,
-          console=True )
-coll = COLLECT(exe,
-               a.binaries,
-               a.zipfiles,
-               a.datas,
-               strip=False,
-               upx=True,
-               name='main')
+          runtime_tmpdir=None,
+          console=False )
+app = BUNDLE(exe,
+             name='main.app',
+             icon=None,
+             bundle_identifier=None)
